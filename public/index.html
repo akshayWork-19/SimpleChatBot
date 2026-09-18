@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatBot #1 - Conversational Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="header-info">
+        <div class="bot-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
+            <rect x="4" y="8" width="16" height="12" rx="4"></rect>
+            <circle cx="9" cy="13" r="1.5" fill="currentColor"></circle>
+            <circle cx="15" cy="13" r="1.5" fill="currentColor"></circle>
+            <path d="M9 17c1 1 5 1 6 0"></path>
+          </svg>
+        </div>
+        <div>
+          <h1>ChatBot-1</h1>
+          <span class="status-indicator"><span class="dot"></span> Online (LangGraph + Groq)</span>
+        </div>
+      </div>
+      <button id="clearBtn" class="icon-btn" title="New Session">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18"></path>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Messages Container -->
+    <main class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <div class="avatar">🤖</div>
+        <div class="bubble">
+          Hello! I'm <strong>ChatBot-1</strong>, your LangGraph conversational agent. How can I help you today?
+        </div>
+      </div>
+    </main>
+
+    <!-- Typing Indicator -->
+    <div class="typing-indicator hidden" id="typingIndicator">
+      <div class="avatar">🤖</div>
+      <div class="dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Input Bar -->
+    <footer class="chat-input-area">
+      <form id="chatForm" class="input-form">
+        <textarea
+          id="userInput"
+          placeholder="Type a message... (Press Enter to send, Shift+Enter for new line)"
+          rows="1"
+          required
+        ></textarea>
+        <button type="submit" id="sendBtn" class="send-btn" title="Send message">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
